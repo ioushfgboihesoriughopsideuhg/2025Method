@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1e1e2f, #101018);
+      color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px;
+      min-height: 100vh;
+    }
+
+    .modern-button {
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .modern-button:hover {
+      background: linear-gradient(135deg, #5c63dd, #9aa0ff);
+    }
+
+    #loginSection, #mainContent {
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    input[type="password"] {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #888;
+      width: 100%;
+      background: #2a2a3a;
+      color: #f1f1f1;
+      margin-bottom: 12px;
+    }
+
+    input[type="password"]:focus {
+      border-color: #8f94fb;
+      outline: none;
+    }
+
+    #error {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    #output p {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 10px 15px;
+      border-left: 4px solid #8f94fb;
+      margin: 10px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>FREE FORTNITE ACCOUNTS</h1>
+
+  <div id="loginSection">
+    <input type="password" id="passwordInput" placeholder="Enter password...">
+    <button class="modern-button" onclick="checkPassword()">Log In</button>
+    <div id="error"></div>
+  </div>
+
+  <div id="mainContent" style="display: none;">
+    <button class="modern-button" id="showButton" onclick="showRandom()">Show Login</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const PASSWORD = "FREE1";
+    const MAX_QUOTES = 3;
+    let clickCount = 0;
+
+    const quotes = [
+      "erin_alva_7@comcast.net:Rafaerin12",
+      "inventor214@yahoo.com:Godismyjudge7!",
+      "sahgak71@gmail.com:Taroof123",
+      "djscotty976@hotmail.co.uk:Longhead976",
+      "SkorupaMarcin@onet.pl:Emilka.12",
+      "shreyasghonnalli@gmail.com:Ezio_1309",
+      "zespolszafa@gmail.com:Policja35!",
+      "w.walas31@gmail.com:Scoobidoo31",
+      "doctord_1995@yahoo.com:10658Mcd",
+      "bernardooliveira6@gmail.com:Be@212194",
+      "milo.krainski.meudec@icloud.com:Bretagne2009",
+      "guilherme.cb.porte@gmail.com:Gui230301*",
+      "petrosg.1990@gmail.com:10112911Aa",
+      "tothzolcsi20@gmail.com:Zolcsi20",
+      "anilguler12@icloud.com:Anil1412",
+      "thorin_moria@live.com:Gothic23@23",
+      "felixzieten16@gmail.com:Analphabet.2001",
+      "rubengc89@gmail.com:Mi@u2018",
+      "willdarbey123@gmail.com:Abers0ch!!",
+      "malikmalhan@gmail.com:Scraper93.",
+      "liamandrewsmith97@outlook.com:Vampire97",
+      "makskniaziuk@gmail.com:Nvidiai5",
+      "flo.54@hotmail.fr:Jijage@8",
+      "filipeambotas@gmail.com:Guns1992",
+      "nejkoandrejas@gmail.com:Nejko.2012",
+      "justinlee703@gmail.com:Maxwell3303!",
+      "lordoj215@gmail.com:Blackgold215",
+      "apostuadrian6@gmail.com:QBGB3NR5N7",
+      "maddyjadet@gmail.com:Pa55werd123",
+      "rat1499@hotmail.co.uk:Dillypoppy1499",
+    ]
+
+    function checkPassword() {
+      const entered = document.getElementById('passwordInput').value;
+      const error = document.getElementById('error');
+      if (entered === PASSWORD) {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+      } else {
+        error.textContent = "Incorrect password.";
+      }
+    }
+
+    function showRandom() {
+      if (clickCount >= MAX_QUOTES) {
+        const button = document.getElementById('showButton');
+        button.disabled = true;
+        button.textContent = "Check accura-v2.mysellauth.com for more";
+        return;
+      }
+
+      const index = Math.floor(Math.random() * quotes.length);
+      const output = document.getElementById('output');
+      const p = document.createElement('p');
+      p.textContent = quotes[index];
+      output.appendChild(p);
+      clickCount++;
+    }
+  </script>
+
+</body>
+</html>
